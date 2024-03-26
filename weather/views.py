@@ -8,7 +8,7 @@ def index(request):
     if request.method == 'POST':
         city = request.POST['city'].title()
         if city != '':
-            response = requests.get(f'https://api.openweathermap.org/data/2.5/weather?q={city}&appid=e2d993d3db9fab44270d4d53a573aad6')
+            response = requests.get(f'https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_ID}')
             response.raise_for_status()
             weather_data = response.json()
             data = {
